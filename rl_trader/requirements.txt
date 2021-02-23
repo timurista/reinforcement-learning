@@ -1,0 +1,6 @@
+
+pandas
+numpy
+sklearn
+
+tensorflow==2.4.1
