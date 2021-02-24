@@ -75,7 +75,9 @@ def main():
         (5, "mario dies")
     ]
     clips = []
-    for msg in messages:
+    for msg_idx in range(messages):
+        msg = messages[msg_idx]
+        start_time = 0 if msg_idx = 0 else msg_idx - 1
         txt_clip = (
             TextClip(
                 msg[1],
@@ -85,6 +87,7 @@ def main():
                 bg_color="red",
                 size=(video.size[0], (mbottom*.8)//1),
             )
+            .set_start(start_time)
             .set_position("bottom")
             .set_duration(msg[0])
         )
@@ -93,7 +96,7 @@ def main():
     
     title_clip = (
         TextClip(
-            "Mario Tries hard",
+            "Mario AI - Development",
             font="Keep-Calm-Medium",
             fontsize=72,
             color="white",
