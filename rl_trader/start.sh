@@ -6,4 +6,7 @@
 # fi
 
 source .venv/bin/activate
-python rl_trader.py
+# train
+python rl_trader.py -m train
+# test
+python rl_trader.py -m test

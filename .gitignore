@@ -127,3 +127,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# rl specific
+rl_trader_models
+rl_trader_rewards
+
+# node modules
+node_modules
