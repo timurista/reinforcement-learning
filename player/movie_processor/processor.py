@@ -23,11 +23,11 @@ def main():
     outPath="/private/tmp/video_mario_1614183995850_edited.mp4"
 
 
-    video = VideoFileClip(vidPath).subclip(2,50)
+    video = VideoFileClip(vidPath).subclip(2,50).fx(vfx.crop, y2=500).fx(vfx.accel_decel)
 
     # Make the text. Many more options are available.
     txt_clip = ( TextClip("Mario Fail test",fontsize=70,color='white')
-                .set_position('center')
+                .set_position('bottom')
                 .set_duration(5) )
 
     speed_up = video.fx( vfx.speedx, 5)
