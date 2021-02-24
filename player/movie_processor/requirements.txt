@@ -1,2 +1,3 @@
 moviepy
 imageio-ffmpeg
+scipy
