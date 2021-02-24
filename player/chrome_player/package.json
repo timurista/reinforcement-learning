@@ -5,12 +5,15 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "process": "node process.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@ffmpeg-installer/ffmpeg": "^1.0.20",
+    "ffmpegdotjs": "0.0.4",
+    "fluent-ffmpeg": "^2.1.2",
     "playwright": "^1.9.0",
     "playwright-video": "^2.4.0"
   }
