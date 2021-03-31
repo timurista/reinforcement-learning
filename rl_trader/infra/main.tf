@@ -7,6 +7,8 @@ variable "tags" {
     }
 }
 
+variable subnet_id {}
+
 data "aws_ami" "hvm" {
   most_recent = true
 
@@ -29,7 +31,7 @@ resource "aws_spot_instance_request" "traderapp" {
   ami           = "ami-0518bb0e75d3619ca"
   instance_type = "t2.small"
   iam_instance_profile="AWSSSMQuickAccess"
-  subnet_id = "subnet-5de10f3a"
+  subnet_id = var.subnet_id
   
   tags = {
     Name = "CheapWorkerRequest"
