@@ -134,3 +134,8 @@ rl_trader_rewards
 
 # node modules
 node_modules
+
+secrets*
+.terraform
+native-*
+alerts.js

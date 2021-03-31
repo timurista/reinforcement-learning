@@ -10,14 +10,8 @@ import moviepy.video as mvid
 import numpy as np
 import imageio_ffmpeg
 
-# imageio.plugins.ffmpeg.download()
 import os
 
-# /Users/turista/projects/reinforcement-learning/player
-# FFMPEG_BINARY = os.getenv('FFMPEG_BINARY', '.venv/lib/python3.8/site-packages/imageio_ffmpeg/binaries/ffmpeg-osx64-v4.2.2')
-# FFMPEG_BINARY = os.getenv('FFMPEG_BINARY', '.venv/lib/python3.8/site-packages/imageio_ffmpeg/binaries/ffmpeg-osx64-v4.2.2')
-
-# IMAGEMAGICK_BINARY = os.getenv('IMAGEMAGICK_BINARY', '.venv/lib/python3.8/site-packages/imageio_ffmpeg/binaries/ffmpeg-osx64-v4.2.2')
 def main():
     path = "/tmp/"
     files = []
@@ -28,6 +22,10 @@ def main():
     print(files)
     vidPath = "/private/tmp/video_mario_1614183995850.mp4"
     outPath = "/private/tmp/video_mario_1614183995850_edited.mp4"
+
+    # todo allow from larger clip
+    # message server
+    # animations
 
     if os.path.isfile(outPath):
         os.remove(outPath)
@@ -75,9 +73,9 @@ def main():
         (5, "mario dies")
     ]
     clips = []
-    for msg_idx in range(messages):
+    for msg_idx in range(len(messages)):
         msg = messages[msg_idx]
-        start_time = 0 if msg_idx = 0 else msg_idx - 1
+        start_time = 0 if msg_idx == 0 else msg_idx - 1
         txt_clip = (
             TextClip(
                 msg[1],
@@ -87,7 +85,7 @@ def main():
                 bg_color="red",
                 size=(video.size[0], (mbottom*.8)//1),
             )
-            .set_start(start_time)
+            .set_start(t=start_time)
             .set_position("bottom")
             .set_duration(msg[0])
         )

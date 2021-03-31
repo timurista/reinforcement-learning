@@ -1,0 +1,22 @@
+{
+  "name": "tradingViewAlertManager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "process": "node process.js",
+    "test": "node test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.0.20",
+    "ffmpegdotjs": "0.0.4",
+    "fluent-ffmpeg": "^2.1.2",
+    "follow-redirects": "^1.13.3",
+    "node-fetch": "^2.6.1",
+    "playwright": "^1.9.0",
+    "playwright-video": "^2.4.0"
+  }
+}
