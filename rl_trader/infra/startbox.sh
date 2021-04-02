@@ -7,6 +7,16 @@ echo $ID
 
 aws ec2 start-instances --instance-ids $ID --output json | jq
 
+count=1
+
 aws ssm start-session --target $ID
 
-# aws ec2 stop-instances --instance-ids $ID --output json | jq
+while [ "$?" -ne "0" ]
+do
+    (( count ++))
+    echo "attempt $count"
+    sleep 10
+    aws ssm start-session --target $ID
+done
+
+echo "All done"

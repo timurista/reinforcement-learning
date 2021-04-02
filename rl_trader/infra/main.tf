@@ -32,6 +32,7 @@ resource "aws_spot_instance_request" "traderapp" {
   instance_type = "t2.small"
   iam_instance_profile="AWSSSMQuickAccess"
   subnet_id = var.subnet_id
+  user_data = templatefile("${path.module}/user_data.tmpl", {})
   
   tags = {
     Name = "CheapWorkerRequest"
